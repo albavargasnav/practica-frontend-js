@@ -1,9 +1,12 @@
 // importar los datos array de anuncios.js
-import { anuncios } from "./anuncios.js";
+import { getAnuncios } from "./anuncios.js";
 import { buildAnuncioView } from "./anunciosView.js";
 
 
-export function anuncioListaController(anuncioListaElement) {
+export async function anuncioListaController(anuncioListaElement) {
+    anuncioListaElement.innerHTML = '';
+
+    const anuncios = await getAnuncios()
     
         // vamos a recorrer el array de anuncios situado en anuncios.js
         for (const anuncio of anuncios) { //por cada anuncio de mi array de anuncios
