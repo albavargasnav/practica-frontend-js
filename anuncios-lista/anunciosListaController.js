@@ -1,5 +1,5 @@
 // importar los datos array de anuncios.js
-import { anuncios } from "../anuncios.js";
+import { anuncios } from "./anuncios.js";
 import { buildAnuncioView } from "./anunciosView.js";
 
 
