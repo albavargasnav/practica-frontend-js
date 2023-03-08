@@ -22,3 +22,11 @@ export function buildAnuncioView(anuncio) {
     //devuelve un nuevo anuncio
     return newAnuncioElement; 
 }
+
+export function buildSpinnerView() {
+    return `<div class="spinner"><div></div><div></div><div></div></div>`
+}
+
+export function buildErrorLoadingAnuncios() {
+    return `<p class="load-error">Ha habido un problema cargando los anuncios. Inténtalo de nuevo más tarde</p>`
+}
