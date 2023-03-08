@@ -4,6 +4,8 @@
 export function buildAnuncioView(anuncio) {
     //añadimos y creamos nodo article
     const newAnuncioElement = document.createElement('article');
+    //añadimos la clase css anuncio de cada article
+    newAnuncioElement.classList.add('anuncio')
     //es la fecha 
     const anuncioDate = new Date(anuncio.date)
 
