@@ -31,7 +31,10 @@
 
 // es para coger datos de fuera a traves de un link en vez de tener un listado json aqui
 export async function getAnuncios() { //get anuncios devuelve una promesa porque async es quien devuelve la promesa
-  const anunciosUrl = 'https://gist.githubusercontent.com/edu-aguilar/8c9a509ec582d04da0640be2b0ede8d5/raw/f75c68645821f3c33d82d9c2c048215584d1d332/tweets.json'
+  //abajo comentado los datos antiguos en json
+  //const anunciosUrl = 'https://gist.githubusercontent.com/edu-aguilar/8c9a509ec582d04da0640be2b0ede8d5/raw/f75c68645821f3c33d82d9c2c048215584d1d332/tweets.json'
+  const anunciosUrl = 'http://localhost:8000/api/anuncios';
+
 
   //hacemos peticiones http a la api, fetch nos devuelve una promesa
   const response = await fetch(anunciosUrl);

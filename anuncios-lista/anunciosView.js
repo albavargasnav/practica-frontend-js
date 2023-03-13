@@ -30,3 +30,7 @@ export function buildSpinnerView() {
 export function buildErrorLoadingAnuncios() {
     return `<p class="load-error">Ha habido un problema cargando los anuncios. Inténtalo de nuevo más tarde</p>`
 }
+
+export function buildEmptyAnuncioLista() {
+    return `<p>No hay resultados disponibles</p>`; 
+}
