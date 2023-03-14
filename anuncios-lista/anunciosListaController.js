@@ -8,12 +8,15 @@ export async function anuncioListaController(anuncioListaElement) {
     anuncioListaElement.innerHTML = buildSpinnerView();
     let anuncios = [];
 
+    
+
     try { 
         // mostrar ruleta de carga mientras espera a que se cargen los anuncios
         anuncios = await getAnuncios()
+        //showMessage('Los anuncios se cargaron correctamente')
+        dispatchCustomEvent('Los anuncios se cargaron correctamente', anuncioListaElement)
 
-        //ocultar spinner
-        hideSpinner(anuncioListaElement)
+       
 
         //si tengo anuncios se pintan
         if (anuncios.lenght > 0) {
@@ -25,8 +28,18 @@ export async function anuncioListaController(anuncioListaElement) {
 
     } catch (error){
         //gestion del error
-        anuncioListaElement.innerHTML = buildErrorLoadingAnuncios();
+        //showMessage('No hemos podido cargar los anuncios');
+        dispatchCustomEvent('No hemos podido cargar los anuncios,', anuncioListaElement)
+        
+    } finally {
+        hideSpinner(anuncioListaElement)
     }
+}
+
+function hideSpinner(anuncioListaElement) {
+    const spinnerElement = anuncioListaElement.querySelector('.spinner');
+    spinnerElement.classList.add('hide');
+    ;
 }
 
 function drawAnuncios(anuncios, anuncioListaElement) {
@@ -39,13 +52,19 @@ function drawAnuncios(anuncios, anuncioListaElement) {
     }
 }
 
-function hideSpinner(anuncioListaElement) {
-    const spinnerElement = anuncioListaElement.querySelector('.spinner');
-    spinnerElement.classList.add('hide');
-}
-
 
 function showEmptyMessage(anuncioListaElement) {
     anuncioListaElement.innerHTML = buildEmptyAnuncioLista();
+}
+
+//se va a ejecutar cuando el evento se va a ejecutar
+function dispatchCustomEvent(message, anuncioListaElement) {
+    const event = new CustomEvent('newNotification', {
+        detail: {
+            message: message
+        }
+    })
+    //avisa del evento
+    anuncioListaElement.dispatchEvent(event);
 }
 

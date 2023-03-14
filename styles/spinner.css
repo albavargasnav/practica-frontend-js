@@ -1,4 +1,4 @@
-.spinner {
+  .spinner {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -36,4 +36,4 @@
       top: 24px;
       height: 32px;
     }
-}
+  }
