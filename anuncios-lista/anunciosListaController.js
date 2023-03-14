@@ -8,8 +8,6 @@ export async function anuncioListaController(anuncioListaElement) {
     anuncioListaElement.innerHTML = buildSpinnerView();
     let anuncios = [];
 
-    
-
     try { 
         // mostrar ruleta de carga mientras espera a que se cargen los anuncios
         anuncios = await getAnuncios()
