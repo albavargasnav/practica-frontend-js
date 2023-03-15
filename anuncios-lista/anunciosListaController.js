@@ -14,8 +14,6 @@ export async function anuncioListaController(anuncioListaElement) {
         //showMessage('Los anuncios se cargaron correctamente')
         dispatchCustomEvent('Los anuncios se cargaron correctamente', anuncioListaElement)
 
-       
-
         //si tengo anuncios se pintan
         if (anuncios.lenght > 0) {
             drawAnuncios(anuncios, anuncioListaElement);
@@ -37,7 +35,6 @@ export async function anuncioListaController(anuncioListaElement) {
 function hideSpinner(anuncioListaElement) {
     const spinnerElement = anuncioListaElement.querySelector('.spinner');
     spinnerElement.classList.add('hide');
-    ;
 }
 
 function drawAnuncios(anuncios, anuncioListaElement) {

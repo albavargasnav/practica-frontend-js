@@ -1,4 +1,4 @@
-import { signupController } from "./signupController";
+import { signupController } from "./signupController.js";
 
 const signupElement = document.querySelector('#createUser')
 

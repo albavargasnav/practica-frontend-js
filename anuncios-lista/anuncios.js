@@ -33,7 +33,7 @@
 export async function getAnuncios() { //get anuncios devuelve una promesa porque async es quien devuelve la promesa
   //abajo comentado los datos antiguos en json
   //const anunciosUrl = 'https://gist.githubusercontent.com/edu-aguilar/8c9a509ec582d04da0640be2b0ede8d5/raw/f75c68645821f3c33d82d9c2c048215584d1d332/tweets.json'
-  const anunciosUrl = 'http://127.0.0.1/api/anuncios';
+  const anunciosUrl = 'http://localhost:8000/api/anuncios';
 
 
   //hacemos peticiones http a la api, fetch nos devuelve una promesa
