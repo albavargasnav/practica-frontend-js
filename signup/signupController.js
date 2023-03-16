@@ -4,21 +4,24 @@ export function signupController(signupElement){
         //previene que en la url se muestren los datos introducidos en el formulario
         event.preventDefault();
 
-        if (isEmailValid(signupElement) && isPasswordValid(signupElement)) {
+        if (isFormValid()) {
             // crear usuario
         }
         
     })
     
-    function isPasswordValid(){ 
+    function isPasswordValid(signupElement){ 
         //verifica si se incluye las expresiones regulares en el email
         const mailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
         const emailElement = signupElement.querySelector('#username');
 
         // Si mailregexp cumple la expresion regular saca un alert
         if (!mailRegExp.test(emailElement.value)) {
-            alert('El email no esta bien escrito')
+            alert('El email no esta bien escrito');
+            return  false
         }
+
+        return true;
 
     }
         
@@ -29,7 +32,14 @@ export function signupController(signupElement){
         const passwordConfirmElement = signupElement.querySelector('#passwordConfirm')  
 
         if (passwordElement.value !== passwordConfirmElement.value) {
-            alert('Las contraseñas no son iguales')
+            alert('Las contraseñas no son iguales');
+            return false
         }
-    }        
+
+        return true;
+    }    
+    
+    function isFormValid(signupElement) {
+       return isEmailValid(signupElement) && isPasswordValid(signupElement)
+    }
 }
