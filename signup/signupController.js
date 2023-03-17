@@ -1,45 +1,42 @@
-export function signupController(signupElement){
+import { createUser } from "./signup.js";
 
-    signupElement.addEventListener('submit', (event) => {
-        //previene que en la url se muestren los datos introducidos en el formulario
-        event.preventDefault();
+export function signupController(signupElement) {
 
-        if (isFormValid()) {
-            // crear usuario
-        }
-        
-    })
-    
-    function isPasswordValid(signupElement){ 
-        //verifica si se incluye las expresiones regulares en el email
-        const mailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
-        const emailElement = signupElement.querySelector('#username');
+  signupElement.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-        // Si mailregexp cumple la expresion regular saca un alert
-        if (!mailRegExp.test(emailElement.value)) {
-            alert('El email no esta bien escrito');
-            return  false
-        }
+    const emailElement = signupElement.querySelector('#username');
+    const passwordElement = signupElement.querySelector('#password');
+    const passwordConfirmElement = signupElement.querySelector('#passwordConfirm');
 
-        return true;
-
+    if (isEmailValid(emailElement.value) &&
+        isPasswordValid(passwordElement.value, passwordConfirmElement.value)) {
+          try {
+            await createUser(emailElement.value, passwordElement.value)
+            alert('Usuario creado correctamente')
+          } catch (error) {
+            alert('No ha podido crearse el usuario')
+          }
     }
-        
+  })
 
-    //se comprueba que las contraseñas sean iguales
-    function isEmailValid(signupElement) {
-        const passwordElement = signupElement.querySelector('#password')
-        const passwordConfirmElement = signupElement.querySelector('#passwordConfirm')  
+  function isEmailValid(email) {
+    const mailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
 
-        if (passwordElement.value !== passwordConfirmElement.value) {
-            alert('Las contraseñas no son iguales');
-            return false
-        }
-
-        return true;
-    }    
-    
-    function isFormValid(signupElement) {
-       return isEmailValid(signupElement) && isPasswordValid(signupElement)
+    if (!mailRegExp.test(email)) {
+      alert('El email no está bien escrito');
+      return false
     }
+
+    return true
+  }
+
+  function isPasswordValid(password, passwordConfirmation) {
+    if (password !== passwordConfirmation) {
+      alert('Las contraseñas no son iguales');
+      return false
+    }
+
+    return true
+  }
 }
