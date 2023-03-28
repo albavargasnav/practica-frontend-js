@@ -13,7 +13,10 @@ export function signupController(signupElement) {
         isPasswordValid(passwordElement.value, passwordConfirmElement.value)) {
           try {
             await createUser(emailElement.value, passwordElement.value)
+            signupElement.reset();
             alert('Usuario creado correctamente')
+            //redireccionar
+            window.location = '/'
           } catch (error) {
             alert(error.message)
           }
