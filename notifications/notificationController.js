@@ -11,8 +11,8 @@ export function notificationController(notificationsElement) {
         }, 5000);
     }
 
-    pubSub.subscribe(pubSub.TOPICS.NOTIFICATION, () => {
-        showMessage()
+    pubSub.subscribe(pubSub.TOPICS.SHOW_NOTIFICATION, (message) => {
+        showMessage(message)
     })
 
     //notificationcontroller devuelve la funcion showmessage para que se vea de fuera
