@@ -1,4 +1,6 @@
+import { pubSub } from "../pubSub.js";
 import { buildNotificationView } from "./notificationView.js";
+
 
 export function notificationController(notificationsElement) {
 
@@ -8,6 +10,11 @@ export function notificationController(notificationsElement) {
             notificationsElement.innerHTML = ''
         }, 5000);
     }
+
+    pubSub.subscribe(pubSub.TOPICS.NOTIFICATION, () => {
+        showMessage()
+    })
+
     //notificationcontroller devuelve la funcion showmessage para que se vea de fuera
     return showMessage;
 }

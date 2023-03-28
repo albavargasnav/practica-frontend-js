@@ -4,7 +4,6 @@ import { anuncioListaController } from "./anuncios-lista/anunciosListaController
 
 // accedemos al dom para obtener el nodo padre (anuncioListaElement)
 const anuncioListaElement = document.querySelector('.lista-anuncio');
-
 const notificationsElement = document.querySelector('.notifications');
 
 const showMessage = notificationController(notificationsElement);
