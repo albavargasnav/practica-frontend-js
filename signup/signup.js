@@ -14,13 +14,8 @@ export async function createUser(email, password) {
       }
     })
   
-    const data = await response.json()
-  
-    return data;
-  
-  
-    // gestionar la respuesta
-  
-  
-  
+    // si la peticion de crear usuario en la respuesta no es ok, saltara este error
+    if (!response.ok) {
+      throw new Error('Error al crear el usuario')
+    }
   }
