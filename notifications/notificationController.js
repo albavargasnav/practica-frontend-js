@@ -10,9 +10,8 @@ export function notificationController(notificationsElement) {
             notificationsElement.innerHTML = ''
         }, 5000);
     }
-    //aqui se suscribe al topic de show message
+
     pubSub.subscribe(pubSub.TOPICS.SHOW_NOTIFICATION, (message) => {
-        // cuando alguien emita se va a mostrar el mensaje
         showMessage(message)
     })
 
