@@ -3,6 +3,7 @@ import { notificationController } from "./notifications/notificationController.j
 import { anuncioListaController } from "./anuncios-lista/anunciosListaController.js"
 import { userActionsController } from "./user-actions/userActionsController.js"
 
+
 // accedemos al dom para obtener el nodo padre (anuncioListaElement)
 const anuncioListaElement = document.querySelector('.lista-anuncio');
 const notificationsElement = document.querySelector('.notifications');

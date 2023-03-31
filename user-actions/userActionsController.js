@@ -17,7 +17,7 @@ export function userActionsController(userActionsElement) {
         userActionsElement.appendChild(buildGreeting(payload.username))
     } else {
         // si no tenemos token borra el link de crear anuncio
-        const createAnuncioLinkElement = userActionsElement.querysSelector('#createAnuncio')
+        const createAnuncioLinkElement = userActionsElement.querySelector('#createAnuncioLink')
         createAnuncioLinkElement.remove()
     }
 }
