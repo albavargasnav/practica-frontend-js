@@ -1,5 +1,7 @@
 import { isEmailValid } from '../utils/isEmailValid.js';
 import { loginUser } from './login.js';
+import { pubSub } from '../pubSub.js';
+
 
 export function loginController(loginElement){
 
@@ -9,7 +11,7 @@ export function loginController(loginElement){
     const emailElement = loginElement.querySelector('#username');
 
     if (!isEmailValid(emailElement.value)) {
-      alert('El email no es válido')
+      pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El email no es válido')
     } else {
        //aqui se verifican que los datos estan en sparrest 
       logUser(loginElement)
@@ -27,6 +29,7 @@ export function loginController(loginElement){
       window.location = '/';
     } catch (error) {
       alert(error.message)
+      pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, error.message)
     }
   }
 }
