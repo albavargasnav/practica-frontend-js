@@ -1,4 +1,5 @@
 // importar los datos array de anuncios.js
+import { pubSub } from "../pubSub.js";
 import { getAnuncios } from "./anuncios.js";
 import { buildAnuncioView, buildSpinnerView, buildErrorLoadingAnuncios, buildEmptyAnuncioLista } from "./anunciosView.js";
 
@@ -11,8 +12,8 @@ export async function anuncioListaController(anuncioListaElement) {
     try { 
         // mostrar ruleta de carga mientras espera a que se cargen los anuncios
         anuncios = await getAnuncios()
-        //showMessage('Los anuncios se cargaron correctamente')
-        dispatchCustomEvent('Los anuncios se cargaron correctamente', anuncioListaElement)
+        //('Los anuncios se cargaron correctamente')
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se cargaron correctamente')
 
         //si tengo anuncios se pintan
         if (anuncios.lenght > 0) {
@@ -24,8 +25,8 @@ export async function anuncioListaController(anuncioListaElement) {
 
     } catch (error){
         //gestion del error
-        //showMessage('No hemos podido cargar los anuncios');
-        dispatchCustomEvent('No hemos podido cargar los anuncios,', anuncioListaElement)
+        //('No hemos podido cargar los anuncios');
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hemos podido cargar los anuncios')
         
     } finally {
         hideSpinner(anuncioListaElement)
@@ -50,16 +51,5 @@ function drawAnuncios(anuncios, anuncioListaElement) {
 
 function showEmptyMessage(anuncioListaElement) {
     anuncioListaElement.innerHTML = buildEmptyAnuncioLista();
-}
-
-//se va a ejecutar cuando el evento se va a ejecutar
-function dispatchCustomEvent(message, anuncioListaElement) {
-    const event = new CustomEvent('newNotification', {
-        detail: {
-            message: message
-        }
-    })
-    //avisa del evento
-    anuncioListaElement.dispatchEvent(event);
 }
 
