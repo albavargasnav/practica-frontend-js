@@ -7,7 +7,6 @@ export function buildAnuncioView(anuncio) {
     //añadimos la clase css anuncio de cada article
     newAnuncioElement.classList.add('anuncio')
     //es la fecha 
-    const anuncioDate = new Date(anuncio.date)
 
     // generar el HTML que representará un anuncio
     //rellena el anuncio con dos article que incluyen dos <p>
@@ -18,7 +17,7 @@ export function buildAnuncioView(anuncio) {
         // Aqui se ve el anuncio del avatar
         <img src="${anuncio.avatar}"/> 
         </div>
-      <p>${anuncio.content} - ${anuncioDate.toISOString()}</p>
+      <p>${anuncio.content}}</p>
     </a>
     `;
 

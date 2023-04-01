@@ -6,7 +6,7 @@ import { buildAnuncioView, buildSpinnerView, buildErrorLoadingAnuncios, buildEmp
 
 export async function anuncioListaController(anuncioListaElement) {
     //cuando el controlador se ejecute lo primero que hace es mostrar la ruleta de carga
-    anuncioListaElement.innerHTML = buildSpinnerView(anuncioListaElement);
+    anuncioListaElement.innerHTML = buildSpinnerView();
     let anuncios = [];
 
     try { 
