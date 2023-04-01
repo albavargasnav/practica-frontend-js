@@ -12,11 +12,14 @@ export function buildAnuncioView(anuncio) {
     // generar el HTML que representará un anuncio
     //rellena el anuncio con dos article que incluyen dos <p>
     newAnuncioElement.innerHTML = ` 
+        <a href="/anuncio-detail.html?anuncioId=${anuncio.id}">
+        <div class="user-info">
         <p>${anuncio.handle}</p> 
         // Aqui se ve el anuncio del avatar
         <img src="${anuncio.avatar}"/> 
-        <p>${anuncio.content} - ${anuncioDate.toISOString()}</p>
-        <span></span><span></span><span></span>
+        </div>
+      <p>${anuncio.content} - ${anuncioDate.toISOString()}</p>
+    </a>
     `;
 
     //devuelve un nuevo anuncio
