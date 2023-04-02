@@ -12,11 +12,12 @@ export async function anuncioListaController(anuncioListaElement) {
     try { 
         // mostrar ruleta de carga mientras espera a que se cargen los anuncios
         anuncios = await getAnuncios()
+        console.log(anuncios);
         //('Los anuncios se cargaron correctamente')
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se cargaron correctamente')
 
         //si tengo anuncios se pintan
-        if (anuncios.lenght > 0) {
+        if (anuncios.length > 0) {
             drawAnuncios(anuncios, anuncioListaElement);
         //si no se pintan sale el error
         } else {
@@ -35,7 +36,7 @@ export async function anuncioListaController(anuncioListaElement) {
 
 function hideSpinner(anuncioListaElement) {
     const spinnerElement = anuncioListaElement.querySelector('.spinner');
-    spinnerElement.classList.add('hide');
+    //spinnerElement.classList.add('hide');
 }
 
 function drawAnuncios(anuncios, anuncioListaElement) {
