@@ -16,7 +16,7 @@ export const createAnuncio = async (anuncioContent) => {
         body: JSON.stringify(newAnuncio)
     })
 
-    //mirar si esta bien poner response con R mayuscula o minuscula
+    
     if (!Response.ok) {
         throw new Error('Error al crear el anuncio')
     }

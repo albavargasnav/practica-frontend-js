@@ -36,7 +36,7 @@ export async function anuncioListaController(anuncioListaElement) {
 
 function hideSpinner(anuncioListaElement) {
     const spinnerElement = anuncioListaElement.querySelector('.spinner');
-    //spinnerElement.classList.add('hide');
+    //spinnerElement.classList.add('hide'); quitado
 }
 
 function drawAnuncios(anuncios, anuncioListaElement) {
