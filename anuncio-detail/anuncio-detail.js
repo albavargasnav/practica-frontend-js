@@ -9,3 +9,15 @@ export const getAnuncioById = async (anuncioId) => {
   
     return tweet;
   }
+
+  export const deleteAnuncio = async (anuncioId) => {
+    const token = localStorage.getItem('token')
+  
+    const response = await fetch(`http://localhost:8000/api/anuncios/${anuncioId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        "Authorization": `Bearer ${token}`,
+      }
+    })
+  }
