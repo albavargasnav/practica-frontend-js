@@ -7,7 +7,7 @@ export const createAnuncio = async (anuncioContent) => {
     const token = localStorage.getItem('token')
 
     // como utilizo fetch para crear un anuncio
-    await fetch('http://localhost:8000/api/anuncios', {
+    const Response = await fetch('http://localhost:8000/api/anuncios', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

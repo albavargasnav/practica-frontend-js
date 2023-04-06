@@ -13,7 +13,6 @@ export function buildAnuncioView(anuncio) {
     newAnuncioElement.innerHTML = ` 
         <a href="/anuncio-detail.html?anuncioId=${anuncio.id}">
         <div class="user-info">
-        <p>${anuncio.handle}</p> 
         // Aqui se ve el anuncio del avatar
         <img src="${anuncio.avatar}"/> 
         </div>
