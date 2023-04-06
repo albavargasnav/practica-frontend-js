@@ -4,6 +4,7 @@ import { buildGreeting } from "./userActionView.js"
 
 export function userActionsController(userActionsElement) {
     const token = localStorage.getItem('token')
+    const closeSessionElement = userActionsElement.querySelector('#closeSession')
 
     if (token) {
         // borra el link de login y sign up
@@ -15,10 +16,15 @@ export function userActionsController(userActionsElement) {
         const payload = decodeToken(token)
         buildGreeting(payload.username)
         userActionsElement.appendChild(buildGreeting(payload.username))
+        closeSessionElement.addEventListener('click', () => {
+            localStorage.removeItem('token')
+            window.location.reload()
+          })
     } else {
         // si no tenemos token borra el link de crear anuncio
         const createAnuncioLinkElement = userActionsElement.querySelector('#createAnuncioLink')
         createAnuncioLinkElement.remove()
+        closeSessionElement.remove()
     }
 }
 
