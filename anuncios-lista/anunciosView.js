@@ -1,15 +1,8 @@
-// el anuncios View se encarga de pintar los anuncios en el html
-
-//recibe el anuncio
 export function buildAnuncioView(anuncio) {
-    //añadimos y creamos nodo article
-    const newAnuncioElement = document.createElement('article');
-    //añadimos la clase css anuncio de cada article
-    newAnuncioElement.classList.add('anuncio')
-    //es la fecha 
 
-    // generar el HTML que representará un anuncio
-    //rellena el anuncio con dos article que incluyen dos <p>
+    const newAnuncioElement = document.createElement('article');
+    newAnuncioElement.classList.add('anuncio')
+
     newAnuncioElement.innerHTML = ` 
         <a href="/anuncio-detail.html?anuncioId=${anuncio.id}">
         <h3>${anuncio.nombre}</h3>
@@ -23,7 +16,6 @@ export function buildAnuncioView(anuncio) {
         <hr>
         <br>
         `;
-    //devuelve un nuevo anuncio
     return newAnuncioElement; 
 }
 

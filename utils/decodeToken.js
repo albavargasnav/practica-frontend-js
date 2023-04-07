@@ -1,4 +1,3 @@
-// devuelve el token decodificado como un objeto javascript
 export const decodeToken = (token) => {
     let decodedToken;
   

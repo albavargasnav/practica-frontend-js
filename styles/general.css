@@ -12,6 +12,7 @@ body {
     margin-left: 3rem;
 }
 
+
 /* TEXT */
 
 .title {
@@ -28,6 +29,7 @@ body {
 }
 
 /* FORM */
+
 .form-container {
     max-width: 90%;
     padding: 30px 40px;
@@ -92,6 +94,8 @@ form a:hover {
     text-decoration: underline;
     color: #4E0848;
 }
+
+/* BUTTONS */
 
 button {
     cursor: pointer;

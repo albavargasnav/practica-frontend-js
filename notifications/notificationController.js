@@ -15,6 +15,5 @@ export function notificationController(notificationsElement) {
         showMessage(message)
     })
 
-    //notificationcontroller devuelve la funcion showmessage para que se vea de fuera
     return showMessage;
 }

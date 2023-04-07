@@ -21,7 +21,6 @@ export const anuncioDetailController = async (anuncioDetailElement, anuncioId) =
     } else {
       const userInfo = decodeToken(token);
       if (anuncio.userId === userInfo.userId) {
-        // añadir evento click al boton + enganchar con sparrest
         deleteButtonElement.addEventListener('click', async () => {
           const answer = confirm('¿Estas seguro de borrar el anuncio?')
           if (answer) {

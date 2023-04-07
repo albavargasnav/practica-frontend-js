@@ -13,7 +13,6 @@ export function loginController(loginElement){
     if (!isEmailValid(emailElement.value)) {
       pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El email no es válido')
     } else {
-       //aqui se verifican que los datos estan en sparrest 
       logUser(loginElement)
     }
   })
