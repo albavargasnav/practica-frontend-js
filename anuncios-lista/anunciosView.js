@@ -16,7 +16,11 @@ export function buildAnuncioView(anuncio) {
         // Aqui se ve el anuncio del avatar
         <img src="${anuncio.avatar}"/> 
         </div>
-      <p>${anuncio.content}</p>
+      <p>${anuncio.nombre}</p>
+      <p>${anuncio.descripcion}</p>
+      <p>${anuncio.precio}</p>
+      <p>${anuncio.tipo}</p>
+      <p>${anuncio.imagen}</p>
     </a>
     `;
 

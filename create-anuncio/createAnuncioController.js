@@ -5,11 +5,16 @@ export const createAnuncioController = async (createAnuncioFormElement) => {
         event.preventDefault();
 
         const formData = new FormData(createAnuncioFormElement);
-        const anuncioContent = formData.get('anuncioContent');
+        const nombreContent = formData.get('nombreContent');
+        const descripcionContent = formData.get('descripcionContent');
+        const precioContent = formData.get('precioContent');
+        const tipoContent = formData.get('tipoContent');
+        const imagenContent = formData.get('imagenContent');
+        
 
         try {
             //cuando creamos el anuncio se redirecciona al listado de anuncios
-            await createAnuncio(anuncioContent)
+            await createAnuncio(nombreContent, descripcionContent, precioContent, tipoContent, imagenContent)
             window.location = '/'
         } catch (error) {
             alert(error)

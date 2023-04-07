@@ -1,7 +1,11 @@
-export const createAnuncio = async (anuncioContent) => {
+export const createAnuncio = async (nombreContent, descripcionContent, precioContent, tipoContent, imagenContent) => {
 
     const newAnuncio = {
-        content: anuncioContent
+        nombre: nombreContent,
+        descripcion: descripcionContent,
+        precio: precioContent,
+        tipo: tipoContent,
+        imagen: imagenContent
     }
 
     const token = localStorage.getItem('token')
