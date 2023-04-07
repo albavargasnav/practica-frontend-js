@@ -12,18 +12,17 @@ export function buildAnuncioView(anuncio) {
     //rellena el anuncio con dos article que incluyen dos <p>
     newAnuncioElement.innerHTML = ` 
         <a href="/anuncio-detail.html?anuncioId=${anuncio.id}">
-        <div class="user-info">
-        // Aqui se ve el anuncio del avatar
-        <img src="${anuncio.avatar}"/> 
-        </div>
-      <p>${anuncio.nombre}</p>
-      <p>${anuncio.descripcion}</p>
-      <p>${anuncio.precio}</p>
-      <p>${anuncio.tipo}</p>
-      <p>${anuncio.imagen}</p>
-    </a>
-    `;
-
+        <h3>${anuncio.nombre}</h3>
+        <p></p>
+        <img  src="${anuncio.imagen}" style="max-width: 120px;"/>
+        <p><b>Descripción:</b> ${anuncio.descripcion}</p>
+        <p><b>Precio: </b>${anuncio.precio}€</p>
+        <p><b>Tipo: </b>${anuncio.tipo}</p>
+        </a>
+        <br>
+        <hr>
+        <br>
+        `;
     //devuelve un nuevo anuncio
     return newAnuncioElement; 
 }

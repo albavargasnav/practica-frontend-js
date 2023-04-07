@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/general.css" />
     <title>Crear anuncio</title>
 </head>
 <body>
-    <h1>Crea tu anuncio</h1>
-
-    <form id="createAnuncioForm">
-        <textarea name="nombreContent" id="nombreContent" cols="30" rows="10" required></textarea>
-        <textarea name="descripcionContent" id="descripcionContent" cols="30" rows="10" required></textarea>
-        <textarea name="precioContent" id="precioContent" cols="30" rows="10" required></textarea>
-        <textarea name="tipoContent" id="tipoContent" cols="30" rows="10" required></textarea>
-        <textarea name="imagenContent" id="imagenContent" cols="30" rows="10" required></textarea>
-
-        <button type="submit">Crear anuncio</button>
-    </form>
+    <div class="container">
+        <div class="first-text">
+            <h1 class="title">Crea tu anuncio</h1>
+            <p class="subtitle">Rellena los campos para crear tu anuncio</p>
+        </div>  
+        <div class="form-container">
+            <form id="createAnuncioForm">
+                <label name="nombreContentInput" id="nombreContentInput" cols="30" rows="10"><b>Título</b></label>
+                <input id="nombreContent" type="text" name="nombreContent" required>
+                <label name="descripcionContentLabel" id="descripcionContentLabel"><b>Describe tu producto</b></label>
+                <textarea name="descripcionContent" id="descripcionContent" cols="20" rows="10" required></textarea>
+                <label name="precioContentInput" id="precioContentInput" cols="30" rows="10"><b>Precio</b></label>
+                <input id="precioContent" type="text" name="precioContent" required>
+                <label name="tipoContentInput" id="tipoContentInput" cols="30" rows="10"><b>Indica si esta en venta o compra</b></label>
+                <input id="tipoContent" type="text" name="tipoContent" required>
+                <label name="imagenContentInput" id="imagenContentInput" cols="30" rows="10"><b>Indica la url de la imagen del producto</b></label>
+                <input id="imagenContent" type="text" name="imagenContent" required>
+                <button type="submit">Crear anuncio</button>
+            </form>
+        </div>
+    </div>
 
     <script type="module" src="./create-anuncio/index.js"></script>
 </body>

@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./anuncios-lista/anuncioStyle.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="./styles/general.css">
+    <link rel="stylesheet" href="./styles/anuncio-detail.css">
     <link rel="stylesheet" href="./styles/spinner.css">
+    <link rel="stylesheet" href="./styles/anuncio-lista.css">
 </head>
 <body>
-    <h1>Título de practica</h1>
-    
-    <section class="user-actions">
-        <a href="./create-anuncio.html" id="createAnuncioLink">Crear anuncio</a>
-        <a href="./login.html" id="loginLink">Login</a>
-        <a href="./signup.html" id="signupLink">Signup</a>
-        <button id="closeSession">Cerrar sesión</button>
-    </section>
-    <!-- Contenido de los anuncios -->
-    <section class="notifications"></section>
-    <section class="lista-anuncio"></section>
-    
+    <div class="container">
+        <h3>Práctica JS-Frontend</h3>
+            <div class="first-text">
+                <h1 class="title">Anuncios publicados</h1>
+                <p class="subtitle">Aquí podras ver los anuncios publicados</p>
+            </div>
+        
+        <section class="user-actions">
+            <a href="./create-anuncio.html" id="createAnuncioLink">Crear anuncio</a>
+            <a href="./login.html" id="loginLink">Login</a>
+            <a href="./signup.html" id="signupLink">Signup</a>
+            <button id="closeSession">Cerrar sesión</button>
+        </section>
+        <!-- Contenido de los anuncios -->
+        <div class="anuncio-container anuncio-row">
+                <section class="notifications"></section>
+                <section class="lista-anuncio"></section>
+        </div>
+    </div>
     <script type="module" src="./index.js"></script>
 </body>
 </html>

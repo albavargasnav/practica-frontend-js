@@ -1,12 +1,13 @@
 export const buildAnuncioDetail = (anuncio) => {
     const anuncioDate = new Date(anuncio.updatedAt)
     return `
-    <p>${anuncio.nombre}</p>
-    <p>${anuncio.descripcion}</p>
-    <p>${anuncio.precio}</p>
-    <p>${anuncio.tipo}</p>
-    <p>${anuncio.imagen}</p>
-    <p>${anuncioDate.toISOString()}</p>
-    <button id="deleteAnuncio">Borrar anuncio</button>
+    <h3>${anuncio.nombre}</h3>
+    <p></p>
+    <img src="${anuncio.imagen}" style="max-width: 120px;"/>
+    <p><b>Descripción:</b> ${anuncio.descripcion}</p>
+    <p><b>Precio: </b>${anuncio.precio}€</p>
+    <p><b>Tipo: </b>${anuncio.tipo}</p>
+    <span>${anuncioDate.toISOString()}</span>
+    <button class="borrar-anuncio" id="deleteAnuncio">Borrar anuncio</button>
   `
 }
