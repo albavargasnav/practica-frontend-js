@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "username": "alba@prueba.es",
+      "password": "$2b$10$smvcJyeGEi/taeAry.IWcevVGkzYm6Iecpy6p0IwWQqjJ0uAk/ELe",
+      "id": 1
+    },
+    {
+      "username": "test@test.com",
+      "password": "$2b$10$rNvN.MQ2TCTCz7HFZYkj.O39N2Rw9X6oUXOtou8DOqJuCtPyA5c4m",
+      "id": 2
+    },
+    {
+      "username": "3@test.com",
+      "password": "$2b$10$rNvN.MQ2TCTCz7HFZYkj.O39N2Rw9X6oUXOtou8DOqJuCtPyA5c4m",
+      "id": 3
+    },
+    {
+      "username": "prueba6@prueba.com",
+      "password": "$2b$10$rNvN.MQ2TCTCz7HFZYkj.O39N2Rw9X6oUXOtou8DOqJuCtPyA5c4m",
+      "id": 4
+    }
+  ],
+  "anuncios": [
+    {
+      "nombre": "XBOX 360",
+      "descripcion": "XBOX 360 en muy buen estado. Incluye mando oficial y caja",
+      "precio": "40",
+      "tipo": "Venta",
+      "imagen": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41God7KwSOL._AC_.jpg",
+      "userId": 3,
+      "updatedAt": "2023-04-07T20:31:18.133Z",
+      "id": 1
+    },
+    {
+      "nombre": "Bicicleta",
+      "descripcion": "Bicicleta con poco uso para montaña. Está en muy buen estado. ",
+      "precio": "85",
+      "tipo": "Venta",
+      "imagen": "https://www.bikestocks.es/52466-home_default/bicicleta-focus-raven-86-2020.jpg",
+      "userId": 3,
+      "updatedAt": "2023-04-07T21:30:38.975Z",
+      "id": 2
+    }
+  ]
+}
